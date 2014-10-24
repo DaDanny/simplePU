@@ -1,0 +1,79 @@
+<div class = "container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2><span class="glyphicon glyphicon-film"></span>&nbsp Programs <small>{{allPrograms.length}}</small></h2>
+      <ul class="list-group">
+        <a no-href ng-click = "newProgramEditor = true" class="list-group-item" ng-show="!newProgramEditor">
+          <span class="glyphicon glyphicon-plus"></span>
+          &nbsp Add Program
+        </a>
+        <li ng-show="newProgramEditor" class="list-group-item">
+          <div class="row">
+            <form name="newProgramForm" class="simple-form" novalidate id="newProgramForm" ng-submit="addProgram(newProgram)">
+              <div class="col-md-7">
+                <div class="form-group" ng-class="{'has-error':badName && submitted}">
+                  <label>Program Name:</label>
+                    <input type="text" class="form-control" ng-model="newProgram.name" placeholder="Name">
+                    <p ng-show="badName && submittedName" class="help-block">Please enter a name</p>
+                </div><!--Form-group-->
+              </div><!--Col-md-7-->
+              <input type="submit" class="enterBtn"/>
+            </form>
+            <span class="glyphicon glyphicon-ok" ng-click="addProgram(newProgram)"></span>
+            &nbsp
+            <span class="glyphicon glyphicon-remove" ng-click="newProgramEditor = false"></span>
+          </div><!--Row-->
+        </li>
+        <a class="list-group-item" ng-class= "{'active':currentProgram == program}" ng-repeat="program in allPrograms" no-href ng-click="changeCurrent(program)">
+          {{program.name}}
+          <span class="pull-right glyphicon glyphicon-trash" ng-click="deleteProgram(program)"></span>
+        </a>
+      </ul>
+    </div><!-- col-sm-4-->
+    <div class="col-sm-9" ng-hide="currentProgram == ''">
+      <h2>Lessons <small>{{currentProgram.lessons.length}}</small></h2>
+      <div class="row">
+        <div class="col-sm-4" ng-repeat="lesson in currentProgram.lessons">
+          <div class="thumbnail" >
+            <div class="caption">
+              <div ng-show="newLesson != lesson">
+                <h4>{{lesson.title}}</h4>
+                <h5>Video URL: <a ng-href="lesson.url">Video</a></h5>
+                <p>Description: {{lesson.description}}</p>
+              </div>
+              <div ng-show="newLesson == lesson">
+                <form id="newLessonForm" role="simple-form">
+                  <div class="form-group">
+                    <label>Lesson Name</label><input type="text" class="form-control" placeholder = "Title"ng-model="newLesson.title">
+                  </div>
+                  <div class="form-group">
+                    <label>Video URL:</label><input type="text" class="form-control" placeholder="URL" ng-model="newLesson.url">
+                  </div>
+                  <div class="form-group">
+                    <label>Description:</label><textarea class="form-control" rows="4" ng-model="newLesson.description"></textarea>
+                  </div>
+                </form>
+                <button class="btn btn-success" ng-click="saveLesson(newLesson)">Save!</button>
+                <button class="btn btn-danger" ng-click="cancelLesson()">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4" ng-show="newLesson == ''">
+          <div class="thumbnail">
+              <button class="btn btn-primary" ng-click="addLesson()"><span class="glyphicon glyphicon-plus"></span>New Lesson</button>
+          </div>
+        </div>
+      </div><!--Row-->
+    </div>
+  </div><!--row-->
+</div><!--Container-->
+
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>

@@ -1,0 +1,21 @@
+'use strict';
+
+describe('Controller: ProgramsCtrl', function () {
+
+  // load the controller's module
+  beforeEach(module('simplePuApp'));
+
+  var ProgramsCtrl, scope;
+
+  // Initialize the controller and a mock scope
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    ProgramsCtrl = $controller('ProgramsCtrl', {
+      $scope: scope
+    });
+  }));
+
+  it('should ...', function () {
+    expect(1).toEqual(1);
+  });
+});
