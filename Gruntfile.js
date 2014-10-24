@@ -242,35 +242,35 @@ module.exports = function (grunt) {
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
-    // usemin: {
-    //   html: ['<%= yeoman.dist %>/public/{,*/}*.html'],
-    //   css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
-    //   js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
-    //   options: {
-    //     assetsDirs: [
-    //       '<%= yeoman.dist %>/public',
-    //       '<%= yeoman.dist %>/public/assets/images'
-    //     ],
-    //     // This is so we update image references in our ng-templates
-    //     patterns: {
-    //       js: [
-    //         [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
-    //       ]
-    //     }
-    //   }
-    // },
-
-    // The following *-min tasks produce minified files in the dist folder
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.client %>/assets/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/public/assets/images'
-        }]
+    usemin: {
+      html: ['<%= yeoman.dist %>/public/{,*/}*.html'],
+      css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
+      js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
+      options: {
+        assetsDirs: [
+          '<%= yeoman.dist %>/public',
+          '<%= yeoman.dist %>/public/assets/images'
+        ],
+        // This is so we update image references in our ng-templates
+        patterns: {
+          js: [
+            [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
+          ]
+        }
       }
     },
+
+    // The following *-min tasks produce minified files in the dist folder
+    // imagemin: {
+    //   dist: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: '<%= yeoman.client %>/assets/images',
+    //       src: '{,*/}*.{png,jpg,jpeg,gif}',
+    //       dest: '<%= yeoman.dist %>/public/assets/images'
+    //     }]
+    //   }
+    // },
 
     svgmin: {
       dist: {

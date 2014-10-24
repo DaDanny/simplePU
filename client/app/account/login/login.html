@@ -1,13 +1,17 @@
-<link rel="stylesheet" href="app/account/login/login.css">
-<div class="container">
+<style>
+*{
+  background-color: white;
+}
+</style>
+<div id="containerDiv">
   <div class="loginDiv">
           <form class="form" name="form" ng-submit="login(form)" novalidate>
             <div class="form-group">
-              <h2>Email</h2>
+              <h2 class="loginLabel">Email</h2>
               <input type="email" name="email" class="form-control" ng-model="user.email" required>
             </div>
             <div class="form-group">
-              <h2>Password</h2>
+              <h2 class="loginLabel">Password</h2>
               <input type="password" name="password" class="form-control" ng-model="user.password" required>
             </div>
             <div class="form-group has-error">
@@ -30,6 +34,6 @@
   </div>
 </div>
 <div id="wrapper">
-<img src="assets/images/simplepickup.bmp" id="myimage"/>
+<img src="http://i.imgur.com/8RgJ0Im.png" id="myimage"/>
 </div>
 

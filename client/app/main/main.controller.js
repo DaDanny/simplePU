@@ -1,10 +1,13 @@
 'use strict';
 
 angular.module('simplePuApp')
-  .controller('MainCtrl', function ($scope, ProgramService, allPrograms, isAdmin, Auth,$location) {
+  .controller('MainCtrl', function ($scope, ProgramService, allPrograms, Auth,$location) {
     
     // isAdmin is passed in via the resolve method of ui-router
-    $scope.role = isAdmin.role;
+    Auth.getCurrentUser()
+      .$promise.then(function(response){
+        $scope.role=response.role;
+      })
 
     // Displays input for new program
     $scope.newProgramEditor = false;

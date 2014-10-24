@@ -26,3 +26,152 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/**
+ * App-wide Styles
+ */
+html{
+    font-family: helvetica neue, arial, sans-serif;
+    font-size: 24px;
+    font-weight: 250;
+    line-height: 35px;
+    letter-spacing: .60px;
+}
+
+
+h2 small{
+    color: #ff9e80;
+}
+
+.thumbnail{
+    background-color: #ff8a65;
+    color:white;
+}
+
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: #ff8a65;
+    border-color: white;
+}
+
+h1{
+    font-family: helvetica neue, arial, sans-serif;
+    font-weight: lighter;
+    letter-spacing: .60px;
+    color:#F5EDED;
+    font-size: 40px;
+}
+
+h2{
+    font-family: helvetica neue, arial, sans-serif;
+    font-weight: lighter;
+    letter-spacing: .60px;
+    color:#F5EDED;
+    font-size: 30px;
+}
+
+h3{
+    font-family: helvetica neue, arial, sans-serif;
+    font-weight: lighter;
+    letter-spacing: .60px;
+    color:#F5EDED;
+    font-size: 22px;
+}
+
+h4{
+    font-family: helvetica neue, arial, sans-serif;
+    font-weight: normal;
+    letter-spacing: .60px;
+    font-size: 18px;
+    color:white;
+}
+
+h5{
+    color:white;
+    font-family: helvetica neue, arial, sans-serif;
+    font-weight: normal;
+    letter-spacing: .60px;
+}
+
+.saveCancel{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.enterBtn{
+    position: absolute; 
+    left: -9999px; 
+    width: 1px; 
+    height: 1px;
+}
+
+p{
+    color:white;
+}
+
+label{
+    color:#03a9f4;
+}
+
+.loginLabel{
+    color:red;
+}
+
+.newLessonLabel{
+    color:white;
+}
+
+#logOut{
+    float:right;
+    color:white;
+    font-family: helvetica neue, arial, sans-serif;
+    font-weight: lighter;
+    letter-spacing: .60px;
+    color:#F5EDED;
+    font-size: 30px;
+}
+
+#editDiv{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.loginDiv{
+  text-align: center;
+  margin:0 auto;
+}
+
+
+#containerDiv{
+  margin-top: 40px;
+  width:100%;
+
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+
+  /* Safari and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+
+  /* W3C */
+  display:box;
+  box-pack:center;
+  box-align:center;
+}
+
+#wrapper{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+#myimage{
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 75%;
+}
