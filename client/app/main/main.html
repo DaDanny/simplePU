@@ -42,7 +42,7 @@ body{
       <ul class="list-group">
         <a class="list-group-item" ng-class= "{'active':currentProgram == program}" ng-repeat="program in allPrograms track by $index" no-href ng-click="changeCurrent(program)">
           {{program.name}}
-          <span class="pull-right glyphicon glyphicon-trash" ng-click="deleteProgram(program)"></span>
+          <span ng-show="role== 'admin'"class="pull-right glyphicon glyphicon-trash" ng-click="deleteProgram(program)"></span>
         </a>
       </ul>
     </div><!-- col-sm-4-->
