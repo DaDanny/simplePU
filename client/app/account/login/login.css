@@ -1,1 +1,54 @@
 
+*{
+  background-color: white;
+  font-family: helvetica neue, arial, sans-serif;
+    font-size: 24px;
+    font-weight: 250;
+    line-height: 35px;
+    letter-spacing: .60px;
+}
+.loginDiv{
+  text-align: center;
+  margin:0 auto;
+}
+
+.container{
+  margin-top: 40px;
+  width:100%;
+
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+
+  /* Safari and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+
+  /* W3C */
+  display:box;
+  box-pack:center;
+  box-align:center;
+}
+
+#wrapper{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+#myimage{
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 75%;
+}
+
+h2{
+    font-family: helvetica neue, arial, sans-serif;
+    font-weight: lighter;
+    letter-spacing: .60px;
+    color:red;
+    font-size: 30px;
+}

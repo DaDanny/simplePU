@@ -26,26 +26,3 @@
     font-weight: normal;
     font-style: normal;
 }
-
-/**
- * App-wide Styles
- */
-html{
-    background-color: #0091ea;
-    font-family: helvetica neue, arial, sans-serif;
-    font-size: 24px;
-    font-weight: 250;
-    line-height: 35px;
-    letter-spacing: .60px;
-}
-
-body{
-    background-color: #0091ea;
-}
-
-.enterBtn{
-    position: absolute; 
-    left: -9999px; 
-    width: 1px; 
-    height: 1px;
-}

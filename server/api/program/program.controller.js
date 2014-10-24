@@ -29,17 +29,37 @@ exports.create = function(req, res) {
 };
 
 // Updates an existing program in the DB.
+exports.lessons = function(req, res) {
+  console.log('req.body:', req.body)
+  Program.update({_id : req.params.id},
+    {$push : {lessons : req.body}},
+    function(err, program){
+      if(err){
+        return handleError(res,err);
+      }
+      else{
+        res.json(201,program);
+      }
+    }
+
+  )
+};
+
+// Replaces the current lessonArray order with the new one
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Program.findById(req.params.id, function (err, program) {
-    if (err) { return handleError(res, err); }
-    if(!program) { return res.send(404); }
-    var updated = _.merge(program, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.json(200, program);
-    });
-  });
+  console.log('req.body:', req.body)
+  Program.update({_id : req.params.id},
+    {lessons : req.body},
+    function(err, program){
+      if(err){
+        return handleError(res,err);
+      }
+      else{
+        console.log('here')
+        res.send(201,program);
+      }
+    }
+  )
 };
 
 // Deletes a program from the DB.

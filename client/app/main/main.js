@@ -15,6 +15,13 @@ angular.module('simplePuApp')
               .then(function(response){
                 return response;
               })
+          },
+          Auth : 'Auth',
+          isAdmin : function(Auth){
+            return Auth.getCurrentUser()
+              .$promise.then(function(response){
+                return response;
+              })
           }
         }
       });

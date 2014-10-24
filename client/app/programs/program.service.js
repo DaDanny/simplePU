@@ -13,7 +13,6 @@ angular.module('simplePuApp')
       the service returns the resposne data to the controller
       */
       getPrograms : function(){
-        console.log('here!');
         return $http.get('/api/programs')
           .then(function(response){
             if(typeof response.data === 'object'){
@@ -54,10 +53,10 @@ angular.module('simplePuApp')
       Takes in the new lesson and sends that to
       the backend to update the program lesson array
       */
-      saveLesson : function(lessonObj){
+      saveLesson : function(lessonObj, programId){
         var promise = $http({
           method : 'PUT',
-          url : '/api/programs/' + lessonObj._id,
+          url : '/api/programs/lessons/' + programId,
           data : lessonObj,
           headers : {'Content-Type' : 'application/json'}
         }).then(function(response){
@@ -65,6 +64,23 @@ angular.module('simplePuApp')
           return{
             lessonObj : function(){
               return lessonObj;
+            }
+          }
+        });
+        return promise;
+      },
+      saveLessonOrder : function(lessonArray, programId){
+        var promise = $http({
+          method : 'PUT',
+          url : '/api/programs/update/'+programId,
+          data : lessonArray,
+          headers : {'Content-Type' : 'application/json'}
+        }).success(function(response){
+          lessonArray = response.data;
+          console.log('response:', response)
+          return{
+            lessonArray : function(){
+              return lessonArray;
             }
           }
         });
